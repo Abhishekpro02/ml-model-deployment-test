@@ -1,0 +1,69 @@
+scan:
+  # Directory containing the codebase to scan.
+  directory: "./data"
+
+  exclude_dirs:
+    - "vendor"
+#    - "data"
+
+  # List of file extensions to process.
+  file_extensions:
+    - ".py"
+    - ".js"
+    - ".jsx"
+    - ".ts"
+    - ".tsx"
+    - ".java"
+    - ".cpp"
+    - ".c"
+    - ".h"
+    - ".go"
+    - ".rb"
+    - ".php"
+    - ".html"
+    - ".css"
+    - ".rs"
+    - ".scala"
+    - ".kt"
+    - ".sh"
+    - ".pl"
+    - ".r"
+    - ".sql"
+    - ".lua"
+
+  # Supported languages corresponding to the file extensions.
+  # Ensure these languages have Tree-sitter grammars available.
+  supported_languages:
+    - "python"
+    - "javascript"
+    - "typescript"
+    - "java"
+    - "cpp"
+    - "c"
+    - "go"
+    - "ruby"
+    - "php"
+    - "html"
+    - "css"
+    - "rust"
+    - "scala"
+    - "kotlin"
+    - "bash"
+    - "perl"
+    - "r"
+    - "sql"
+    - "lua"
+
+  # Maximum number of characters per combined batch of function chunks.
+  batch_size_chars: 4000
+
+  # Maximum number of concurrent API requests (used by the semaphore).
+  max_concurrent: 5
+
+output:
+  # Path to the file where the scan results will be stored.
+  results_file: "scan_results_new.json"
+
+logging:
+  # Logging level can be DEBUG, INFO, WARNING, ERROR, or CRITICAL.
+  level: INFO
